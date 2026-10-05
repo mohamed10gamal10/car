@@ -1,0 +1,16 @@
+package com.Carrental.car.Repositry;
+
+import com.Carrental.car.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+
+import java.util.Optional;
+import java.util.UUID;
+@Repository
+public interface UserRegisterrepositry extends JpaRepository<User, UUID> {
+
+    Optional<User>findByName(String name);
+    boolean existsByName(String name);
+    boolean existsByEmail(String email);
+}
